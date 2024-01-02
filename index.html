@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
+
+    <title>QR Generator</title>
+</head>
+<body class="text-white">
+
+    <!-- INPUT URL -->
+
+    <div id="input-section">
+
+        <div class="h-screen w-screen flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-200 via-violet-600 to-sky-900">            
+    
+            <div class="text-white text-4xl font-bold mb-12">
+                <h1><i class="ri-qr-code-line"></i> Generador de codigos QR</h1>
+            </div>
+    
+            <div class="flex items-center p-4 bg-white text-white rounded-xl w-1/2 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100">
+                <input type="text" id="url" class="focus:outline-none font-bold bg-transparent text-lg placeholder-white w-3/4" placeholder="Ingrese una URL" required>
+                <button type="submit" id="submit" class="ml-auto bg-[#29468F] p-3 text-white rounded-xl font-bold hover:bg-[#4771DA] transition-all duration-150">Codigo QR</button>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- QR GEN -->
+
+    <div id="qr-section">
+
+        <div class="h-screen w-screen flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-200 via-violet-600 to-sky-900">
+
+            <div class="relative w-80 h-80 bg-[#132043] rounded-full" id="qr-container">
+                <div class="flex items-center justify-center absolute top-0 left-0 right-0 bottom-0 m-auto w-[240px] h-[240px] bg-white rounded-xl">
+                    <div id="qrcode"></div>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <button id="download" class="mr-4 bg-[#29468F] p-3 text-white rounded-xl font-bold hover:bg-[#4771DA] transition-all duration-150"><i class="ri-download-line"></i> Descargar</button>
+                <button id="share" class="bg-[#29468F] p-3 text-white rounded-xl font-bold hover:bg-[#4771DA] transition-all duration-150"><i class="ri-share-line"></i> Compartir</button>
+            </div>
+            
+            <div class="mt-12">
+                <button id="new-code" class="mr-4 bg-[#29468F] p-3 text-white rounded-xl font-bold hover:bg-[#4771DA] transition-all duration-150"><i class="ri-add-circle-line"></i> Nuevo codigo</button>
+                
+            </div> 
+            
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
